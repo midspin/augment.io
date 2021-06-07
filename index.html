@@ -1,83 +1,21 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script 
-
-	    src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.4.2/dist/mindar.prod.js"></script>  
-	  
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.4.2/dist/mindar.prod.js"></script>
   </head>
   <body>
-    
-
-<a-scene mindar="imageTargetSrc: ./targets.mind; showStats: true;" color-space="sRGB" 
-
-renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-
-
-permission-ui="enabled: false">
+    <a-scene mindar="imageTargetSrc: ./targets.mind; showStats: true;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
-    <img id="card" 
-
-src="https://midspin.github.io/augment.io/image/card.png" />
-	      
-<a-assets>
-          <img id="card" src="./assets/card-example/card.png">
-          <img id="icon-web" src="./assets/card-example/icons/web.png">
-          <img id="icon-location" src="./assets/card-example/icons/location.png">
-          <img id="icon-profile" src="./assets/card-example/icons/profile.png">
-          <img id="icon-phone" src="./assets/card-example/icons/phone.png">
-          <img id="icon-email" src="./assets/card-example/icons/email.png">
-          <img id="icon-play" src="./assets/card-example/icons/play.png">
-          <img id="icon-left" src="./assets/card-example/icons/left.png">
-          <img id="icon-right" src="./assets/card-example/icons/right.png">
-          <img id="paintandquest-preview" src="./assets/card-example/portfolio/paintandquest-preview.png">
-        </a-assets>	      
-	      
-    <a-asset-item id="avatarModel" 
-
-src="https://midspin.github.io/augment.io/image/scene.gltf"></a-asset-item>	      
+        <img id="card" src="https://midspin.github.io/augment.io/image/card.png" />
+        <a-asset-item id="avatarModel" src="https://midspin.github.io/augment.io/image/scene.gltf"></a-asset-item>
       </a-assets>
 
-      <a-camera 
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-position="0 0 0" look-controls="enabled: false"></a-camera>
-<a-entity id="mytarget" mytarget="" mindar-image-target="targetIndex: 0">
-          <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0" material="" geometry=""></a-plane>
-
-          <a-entity visible="false" id="portfolio-panel" position="0 0 -0.01">
-            <a-text value="Portfolio" color="black" align="center" width="2" position="0 0.4 0" text=""></a-text>
-            <a-entity id="portfolio-item0">
-              <a-video id="paintandquest-video-link" webkit-playsinline="" playsinline="" width="1" height="0.552" position="0 0 0" material="" geometry=""></a-video>
-              <a-image id="paintandquest-preview-button" class="clickable" src="#paintandquest-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1" material="" geometry="">
-              </a-image>
-            </a-entity>
-            <a-entity id="portfolio-item1" visible="false">
-              <a-image class="clickable" src="#coffeemachine-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1" material="" geometry="">
-              </a-image>
-            </a-entity>
-            <a-entity id="portfolio-item2" visible="false">
-              <a-image class="clickable" src="#peak-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1" material="" geometry="">
-              </a-image>
-            </a-entity>
-
-            <a-image visible="false" id="portfolio-left-button" class="clickable" src="#icon-left" position="-0.7 0 0" height="0.15" width="0.15" material="" geometry=""></a-image>
-            <a-image visible="false" id="portfolio-right-button" class="clickable" src="#icon-right" position="0.7 0 0" height="0.15" width="0.15" material="" geometry=""></a-image>
-          </a-entity>
-
-          <a-image visible="false" id="profile-button" class="clickable" src="#icon-profile" position="-0.42 -0.5 0" height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate" material="" geometry=""></a-image>
-
-          <a-image visible="false" id="web-button" class="clickable" src="#icon-web" alpha-test="0.5" position="-0.14 -0.5 0" height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate" material="" geometry=""></a-image>
-
-          <a-image visible="false" id="email-button" class="clickable" src="#icon-email" position="0.14 -0.5 0" height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate" material="" geometry=""></a-image>
-
-          <a-image visible="false" id="location-button" class="clickable" src="#icon-location" position="0.42 -0.5 0" height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate" material="" geometry=""></a-image>
-
-          <a-gltf-model id="avatar" rotation="0 0 0" position="0 -0.25 0" scale="0.004 0.004 0.004" src="#avatarModel" gltf-model=""></a-gltf-model>
-
-          <a-text id="text" class="clickable" value="" color="black" align="center" width="2" position="0 -1 0" geometry="primitive:plane; height: 0.1; width: 2;" material="opacity: 0.5" text=""></a-text>
-        </a-entity>
-    <a-entity mindar-image-target="targetIndex: 0">
-    <a-gltf-model rotation="1 0 0 " position="0 -0.25 0" scale="0.1 0.1 0.1" src="#avatarModel" 
-		  animation="property: position; to: 0 0 0; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
-</a-entity> </a-scene>
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+        <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.005 0.005 0.005" src="#avatarModel" animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
+      </a-entity>
+    </a-scene>
   </body>
 </html>
